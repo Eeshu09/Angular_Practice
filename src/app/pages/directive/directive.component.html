@@ -1,0 +1,28 @@
+<p>directive works!</p>
+<!-- ATTRIBITE Directive -->
+<button (click)="isLogin()" [ngClass]="flag?'login':'logout'">{{flag?"logOut":"login"}}</button><br/>
+<br/>
+
+@if(flag){
+    <p>You are LoginIn</p>
+}
+@else{
+    <p>You are Logout</p>
+}
+
+<p [ngStyle]="{'background-color':flag?'blue':'red'}">Welcome</p>
+
+<!-- Structural Directive -->
+
+<div *ngIf="isStructural; else loginPrompt">
+    <p>Welcome back, user!</p>
+  </div>
+  
+  <ng-template #loginPrompt>
+    <p>Please log in to continue.</p>
+  </ng-template>
+
+
+  <ul>
+    <li *ngFor="let i of name;let o=index">{{i}}</li>
+  </ul>

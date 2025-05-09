@@ -1,0 +1,21 @@
+<p>databinding works!</p>
+
+<!-- Interpolation One way -->
+
+<input type="text" placeholder="name" value="{{name}}" />
+<h1>{{name}}</h1> 
+
+<!-- PropertBinding -->
+
+<input type="text"placeholder="lastName" [value]="lastName"/>
+
+<!-- Event Binding -->
+
+<button (click)="getUser()">Click</button>
+<button (click)="getUser1('Angular')">Click2</button>
+
+<!-- Two way Data Binding ngModel -->
+<input type="text" [placeholder]="plsHolder" [(ngModel)]="FirstName"/>
+<p>My Name is : {{FirstName}}</p>
+
+

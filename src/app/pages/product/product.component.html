@@ -1,0 +1,7 @@
+<p>product works!</p>
+<div *ngFor="let produc of product;let i=index">
+    <p>{{produc.category}}<p>
+    <p>{{produc.price}}</p>
+    <button (click)="moreDetails(produc.id)">More Details</button>
+
+</div>
