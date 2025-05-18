@@ -5,6 +5,7 @@ import { AddUserComponent } from './pages/add-user/add-user.component';
 import { DirectiveComponent } from './pages/directive/directive.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+import { ProductQueryComponent } from './pages/product-query/product-query.component';
 
 export const routes: Routes = [
     {
@@ -13,7 +14,9 @@ export const routes: Routes = [
     {path:'dataBinding',component:DatabindingComponent},
     {path:'addUser',component:AddUserComponent},
     {path:'directive',component:DirectiveComponent},
-    {path:'product',component:ProductComponent},{
+    {path:'product',component:ProductComponent},
+    {
         path:'productDetails/:id',component:ProductDetailsComponent
-    }
+    },
+    {path:'product_query',component:ProductQueryComponent}
 ];

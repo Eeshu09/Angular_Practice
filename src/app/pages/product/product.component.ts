@@ -24,5 +24,10 @@ export class ProductComponent {
  moreDetails(id:number){
     this.router.navigate(['productDetails',id])
  }
+ gotoQuery(id:number){
+  this.router.navigate(['product_query'],{
+    queryParams:{productId:id}
+  })
+ }
   
 }
