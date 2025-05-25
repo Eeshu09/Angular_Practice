@@ -1,0 +1,81 @@
+<!-- 
+<form   #userFrom="ngForm" (ngSubmit)="OnSubmit()">
+
+    <input  #firstName="ngModel"  type="text" name="firstName"  placeholder="Name" [(ngModel)]="user.firstName" minlength="3" maxlength="20"/><br/><br/>
+     <div *ngIf="firstName.invalid && firstName.touched" class="error">
+        <div *ngIf="firstName.errors?.['required']">Name is required.</div>
+        <div *ngIf="firstName.errors?.['minlength']">
+          Name must be at least 3 characters long.
+        </div>
+        <div *ngIf="firstName.errors?.['maxlength']">
+          Name cannot be more than 50 characters long.
+        </div>
+      </div><br/>
+        <input  #lastName="ngModel" type="text" name="lastName"  placeholder="lastName" [(ngModel)]="user.lastName" minlength="2"/><br/><br/>
+
+    <input  #age="ngModel" type="number" name="age" placeholder="age" [(ngModel)]="user.age"  min="18"/><br/><br/>
+    <input  #email="ngModel" type="email" name="email" placeholder="email" [(ngModel)]="user.email"/><br/><br/>
+    <input  #location="ngModel" type="text" name="location" placeholder="location" [(ngModel)]="user.location"/><br/><br/>
+    <select  #gender="ngModel" name="gender" [(ngModel)]="user.gender">
+        <option value="" >Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select><br/><br/>
+
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+     
+</form> -->
+<form  #userForm="ngForm" (ngSubmit)="OnSubmit()">
+
+  <!-- First Name -->
+  <input type="text" name="firstName" placeholder="Name" [(ngModel)]="user.firstName"  #firstName="ngModel" />
+ <span *ngIf="firstName.invalid && name.touched">name is required</span>
+  <br /><br />
+
+  <!-- Last Name -->
+  <input type="text" name="lastName" placeholder="Last Name" [(ngModel)]="user.lastName" required #lastName="ngModel" />
+  <div *ngIf="lastName.invalid && lastName.touched" style="color:red;">
+    <div *ngIf="lastName.errors?.['required']">Last Name is required</div>
+  </div>
+  <br /><br />
+
+  <!-- Age -->
+  <input type="number" name="age" placeholder="Age" [(ngModel)]="user.age" required min="18" #age="ngModel" />
+  <div *ngIf="age.invalid && age.touched" style="color:red;">
+    <div *ngIf="age.errors?.['required']">Age is required</div>
+    <div *ngIf="age.errors?.['min']">Age must be greater than 0</div>
+  </div>
+  <br /><br />
+
+  <!-- Email -->
+  <input type="email" name="email" placeholder="Email" [(ngModel)]="user.email" required email #email="ngModel" />
+  <div *ngIf="email.invalid && email.touched" style="color:red;">
+    <div *ngIf="email.errors?.['required']">Email is required</div>
+    <div *ngIf="email.errors?.['email']">Invalid email format</div>
+  </div>
+  <br /><br />
+
+  <!-- Location -->
+  <input type="text" name="location" placeholder="Location" [(ngModel)]="user.location" required #location="ngModel" />
+  <div *ngIf="location.invalid && location.touched" style="color:red;">
+    <div *ngIf="location.errors?.['required']">Location is required</div>
+  </div>
+  <br /><br />
+
+  <!-- Gender -->
+  <select name="gender" [(ngModel)]="user.gender" required #gender="ngModel">
+    <option value="">Select Gender</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select>
+  <div *ngIf="gender.invalid && gender.touched" style="color:red;">
+    <div *ngIf="gender.errors?.['required']">Gender is required</div>
+  </div>
+  <br /><br />
+
+  <!-- Submit Button -->
+  <button type="submit" >Submit</button>
+
+</form>
