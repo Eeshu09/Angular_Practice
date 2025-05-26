@@ -13,7 +13,11 @@ export class AddUserComponent {
   user:User={
     name:'',
     email:'',
-    username:''
+    password:'',
+    companyName:'',
+    department:'',
+    salary:0
+    
 
   }
   constructor(private userService:UserService){}

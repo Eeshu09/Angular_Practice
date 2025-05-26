@@ -1,5 +1,8 @@
 export interface User{
     name:string,
     email:string,
-    username:string
+    password:string,
+    companyName:string,
+    department:string,
+    salary:0
 }
