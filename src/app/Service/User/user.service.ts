@@ -11,6 +11,11 @@ export class UserService {
   constructor(private http:HttpClient) {
 
    }
+
+getFakeUser():Observable<any[]>{
+  return this.http.get<any[]>('https://jsonplaceholder.typicode.com/users');
+}
+
    getUser():Observable<any>{
     const url="https://localhost:7182/api/Use"
     return this.http.get(url).pipe(

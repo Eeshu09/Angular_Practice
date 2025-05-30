@@ -2,3 +2,9 @@
 <h1>{{amout  | custompipes}}</h1>
 <h1>{{15 | custompipes}}</h1>
 <h1>{{15 | custompipes:12}}</h1>
+
+
+<app-outputdecorator (getUser)="handleUser($event)"></app-outputdecorator>
+@for(u of Users;track u){
+    <h1>{{u}}</h1>
+}
